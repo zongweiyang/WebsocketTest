@@ -1,5 +1,9 @@
 package com.test.controller;
 
+import com.test.service.Greeting;
+import com.test.service.HelloMessage;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -10,7 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebsocketController {
 
 
-    public Object subscribe(){
-        return "web socket test";
+    @MessageMapping("/hello")
+    @SendTo("/topic/greetings")
+    public Object greeting(HelloMessage message) throws InterruptedException {
+        System.out.println("message comming");
+        Thread.sleep(3000); // simulated delay
+        return new Greeting("hello, "+ message.getName() + "!");
     }
 }
