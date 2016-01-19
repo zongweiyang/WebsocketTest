@@ -2,5 +2,6 @@ machine:
   java:
     version: oraclejdk8
 
-post:
-  - cp -R /home/ubuntu/WebsocketTest/target/com.test.war $CIRCLE_ARTIFACTS
+deployment:
+  post:
+    - cp -R /home/ubuntu/WebsocketTest/target/com.test.war $CIRCLE_ARTIFACTS
