@@ -13,6 +13,7 @@ public class TestController {
 
     @RequestMapping(path = "/follow",method = RequestMethod.GET)
     public Object follow(){
+        System.out.println("follow ");
         return "follow fun";
     }
 }
