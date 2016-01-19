@@ -3,5 +3,9 @@ machine:
     version: oraclejdk8
 
 deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: websocket-test
   post:
     - cp -R /home/ubuntu/WebsocketTest/target/websocket-test.war $CIRCLE_ARTIFACTS
