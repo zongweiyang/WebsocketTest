@@ -32,7 +32,7 @@ RUN set -x \
         && rm tomcat.tar.gz*
 
 ADD pom.xml /tmp/build/
-RUN cd /tmp/build && mvn -q dependency:resolve
+RUN cd /tmp/build && mvn dependency:resolve
 
 ADD src /tmp/build/src
         #构建应用
