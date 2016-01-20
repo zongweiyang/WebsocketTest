@@ -44,4 +44,4 @@ RUN cd /tmp/build && mvn -q -DskipTests=true package \
         && cd / && rm -rf /tmp/build
 
 EXPOSE 8080
-CMD["catalina.sh","run"]
+RUN /bin/sh $CATALINA_HOME/bin/startup.sh
