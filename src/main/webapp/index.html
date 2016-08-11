@@ -1,66 +1,430 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hello WebSocket</title>
-    <script src="js/sockjs-0.3.4.js"></script>
-    <script src="js/stomp.js"></script>
-    <script type="text/javascript">
-        var stompClient = null;
-        
-        function setConnected(connected) {
-            document.getElementById('connect').disabled = connected;
-            document.getElementById('disconnect').disabled = !connected;
-            document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
-            document.getElementById('response').innerHTML = '';
-        }
-        
-        function connect() {
-            var socket = new SockJS('/hello');
-            stompClient = Stomp.over(socket);            
-            stompClient.connect({}, function(frame) {
-                setConnected(true);
-                console.log('Connected: ' + frame);
-                stompClient.subscribe('/topic/greetings', function(greeting){
-                    showGreeting(JSON.parse(greeting.body).content);
-                });
-            });
-        }
-        
-        function disconnect() {
-            if (stompClient != null) {
-                stompClient.disconnect();
-            }
-            setConnected(false);
-            console.log("Disconnected");
-        }
-        
-        function sendName() {
-            var name = document.getElementById('name').value;
-            stompClient.send("/app/hello", {}, JSON.stringify({ 'name': name }));
-        }
-        
-        function showGreeting(message) {
-            var response = document.getElementById('response');
-            var p = document.createElement('p');
-            p.style.wordWrap = 'break-word';
-            p.appendChild(document.createTextNode(message));
-            response.appendChild(p);
-        }
-    </script>
-</head>
-<body onload="disconnect()">
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
-    Javascript and reload this page!</h2></noscript>
-<div>
-    <div>
-        <button id="connect" onclick="connect();">Connect</button>
-        <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
-    </div>
-    <div id="conversationDiv">
-        <label>What is your name?</label><input type="text" id="name" />
-        <button id="sendName" onclick="sendName();">Send</button>
-        <p id="response"></p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0034)http://www.58auto.com.cn/index.asp -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>【诚信二手车官方网站】-上海二手车交易市场_上海二手车评估_上海二手车交易网</title>
+<meta name="keywords" content="诚信二手车官网,上海二手车交易市场,上海二手车评估,二手车公司,上海二手车交易网,诚信二手车网">
+<meta name="description" content="诚信二手车位于上海二手车交易市场,主要业务包括上海二手车评估,上海二手车寄售,上海二手车咨询,是一家上海二手车交易诚信单位.咨询电话：4000-701-555">
+<link href="./index_files/style.css" rel="stylesheet" type="text/css">
+<link href="./index_files/home.css" rel="stylesheet" type="text/css">
+<script src="./index_files/uaredirect.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("http://www.58auto.com.cn/m/index.asp");</script>
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+
+<body>
+
+<div class="container">
+<div class="top">
+<div class="logo"><a href="./index.html" title=""><img src="./index_files/logo.png"></a></div>
+<div class="top_right">
+
+<b>服务热线：4000-701-555</b></div>
+    <div class="clear"></div>
+</div>
+<div class="header">
+<div class="header_mode">
+<div class="navigation">
+<ul>
+   <li><a href="./index.html" target= "_self" class="item-active">首页</a></li>
+    <li><a href="./flow.html">卖车流程</a></li>
+   <li><a href="./knowledge.html">卖车必知</a></li>
+   <li><a href="./service.html">服务承诺 </a></li> 
+   <li><a href="./sell.html">预约卖车</a></li>
+  
+</ul>
+</div>
+<div class="nav-right">
+<ul>
+   <li class="book"><a href="http://www.58auto.com.cn/reservation.asp">预约卖车</a></li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+ 
+<!--内容开始-->
+<div class="content-wrap">
+    <div class="main-content">
+        <div class="total">
+            <div class="num">
+                180315            </div>
+            <p class="btxt">车主在这里成功售出爱车</p>
+
+            <p class="stxt">比市场价高2000元+；卖亏了，我们补差价！</p>
+        </div>
+    <form action="http://www.58auto.com.cn/index.asp" method="post" name="loginbox" id="loginbox">
+         
+            
+            <div class="form-box">
+               <div class="form w250">
+                    <input type="text" name="name" id="name" value="姓名" onfocus="if (value ==&#39;姓名&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;姓名&#39;}">
+                </div>
+               
+         
+                <div class="form w250">
+                    <input type="text" name="mobile" id="mobile" value="手机号" onfocus="if (value ==&#39;手机号&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;手机号&#39;}">
+                </div>
+				 <div class="form w250">
+                    <input type="text" name="car" id="car" value="车型 如:宝马520Li " onfocus="if (value ==&#39;车型 如:宝马520Li &#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;车型 如:宝马520Li &#39;}">
+                </div>
+            </div>
+            <div class="link-box">
+			<input name="ok" type="hidden" value="1">
+			<input name="add" type="hidden" value="ok">
+			<input name="" type="submit" value="我要高价卖车" class="btn" onclick="return checkform();">
+            </div>
+        </form>
+		
+		<div class="sucess"><div id="demo" style="overflow:hidden;height:48px;width:300px; color:#666666">
+<div id="demo1">
+<p style="height:24px; line-height:24px; color:#666666; font-size:12px;">
+张先生&nbsp;130****8944&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;150****5622&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; ccolor:#666; font-size:12px;">
+张小姐&nbsp;130****7729&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+贾先生&nbsp;135****5265&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;158****5158&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+王小姐&nbsp;158****2203&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+贾小姐&nbsp;137****5881&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+王先生&nbsp;136****4988&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+马先生&nbsp;136****7810&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;139****6060&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+白先生&nbsp;135****9738&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+刘小姐&nbsp;131****7131&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;134****1667&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+刘先生&nbsp;137****9917&nbsp;08月10日 预约成功
+</p>
+贾先生&nbsp;133****3595&nbsp;08月10日 预约成功
+<p></p>
+<p style="height:24px; line-height:24px; ccolor:#666; font-size:12px;">
+刘小姐&nbsp;158****9884&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+陈先生&nbsp;136****3545&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+李小姐&nbsp;130****1131&nbsp;08月10日 预约成功
+</p>
+</div>
+<div id="demo2">
+<p style="height:24px; line-height:24px; color:#666666; font-size:12px;">
+张先生&nbsp;130****8944&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;150****5622&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; ccolor:#666; font-size:12px;">
+张小姐&nbsp;130****7729&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+贾先生&nbsp;135****5265&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;158****5158&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+王小姐&nbsp;158****2203&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+贾小姐&nbsp;137****5881&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+王先生&nbsp;136****4988&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+马先生&nbsp;136****7810&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;139****6060&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+白先生&nbsp;135****9738&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+刘小姐&nbsp;131****7131&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+张先生&nbsp;134****1667&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+刘先生&nbsp;137****9917&nbsp;08月10日 预约成功
+</p>
+贾先生&nbsp;133****3595&nbsp;08月10日 预约成功
+<p></p>
+<p style="height:24px; line-height:24px; ccolor:#666; font-size:12px;">
+刘小姐&nbsp;158****9884&nbsp;08月10日 预约成功
+</p>
+
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+陈先生&nbsp;136****3545&nbsp;08月10日 预约成功
+</p>
+<p style="height:24px; line-height:24px; color:#666; font-size:12px;">
+李小姐&nbsp;130****1131&nbsp;08月10日 预约成功
+</p>
+</div>
+</div>
+   <script>
+   var speed=50
+   demo2.innerHTML=demo1.innerHTML
+   function Marquee(){
+   if(demo2.offsetTop-demo.scrollTop<=0)
+   demo.scrollTop-=demo1.offsetHeight
+   else{
+   demo.scrollTop++
+   }
+   }
+   var MyMar=setInterval(Marquee,speed)
+   demo.onmouseover=function() {clearInterval(MyMar)}
+   demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+   </script>
+
+
+
+</div>
+		</div>
+            <div class="guide">
+    <div class="main-content" style="width:1100px;">
+        <h1 class="section-title">卖车就是这么简单</h1>
+        <div class="col-lg-3 has-next">
+            <div class="icon-container guide-bg1"></div>
+            <p class="step">预约卖车</p>
+            <p class="desc" style="margin-top:5px; font-size:14px;">
+            电话预约+在线预约+微信预约<br>
+            2小时内快速反馈
+            </p>
+        </div>
+		
+		<div class="jiantou"></div>
+        <div class="col-lg-3 has-next">
+            <div class="icon-container guide-bg2"></div>
+            <p class="step">上门检测</p>
+            <p class="desc" style="margin-top:5px; font-size:14px;">
+           上门检测覆盖全上海<br>
+              30分钟专业检测
+            </p>
+        </div>
+		<div class="jiantou"></div>
+        <div class="col-lg-3 has-next">
+            <div class="icon-container guide-bg3"></div>
+            <p class="step">得出报价</p>
+            <p class="desc" style="margin-top:5px; font-size:14px;">
+           根据真实车况  得出一个<br>
+           令您满意的成交价格</p>
+        </div>
+		<div class="jiantou"></div>
+        <div class="col-lg-3 col-md-3">
+            <div class="icon-container guide-bg4"></div>
+            <p class="step">付款交车</p>
+            <p class="desc" style="margin-top:5px; font-size:14px;">
+            诚信二手车完成交车<br>
+            当场立即付款
+            </p>
+        </div>
     </div>
 </div>
-</body>
-</html>
+<div class="main-content">
+        <div class="sellCar">
+            <h2>他们已成功出售爱车</h2>
+            <ul>
+                
+                    <li>
+                        <span><img src="./index_files/20160203153741384138.jpg"></span>
+                        <div class="txt">
+                            <p class="bg">宝马5系2011款 520Li 典雅型 2010-11-15首次上牌</p>
+                            <p>共行驶31020公里，一般车况</p>
+							<p>张小姐，134****3994 </p>
+                            <p>2016-02-03，<em>23万元</em> 成交</p>
+                        </div>
+                    </li>
+                
+                    
+                    <li>
+                        <span><img src="./index_files/20160203154897869786.jpg"></span>
+                        <div class="txt">
+                            <p class="bg">普拉多 2010款 4.0L 自动TX-L NAVI 2011-11-01首次上牌</p>
+                            <p>共行驶58308公里，一般车况</p>
+							<p>李先生，133****6131 </p>
+                            <p>2016-02-01，<em>38.5万元</em> 成交</p>
+                        </div>
+                    </li>
+                
+                    
+                    <li>
+                        <span><img src="./index_files/c3.jpg"></span>
+                        <div class="txt">
+                            <p class="bg">本田 CR-V 2010款 LXi 都市版 2011-04-01首次上牌</p>
+                            <p>共行驶81270公里，一般车况</p>
+							<p>王先生，148****7845 </p>
+                            <p>2015-06-12，<em>10.5万元</em> 成交</p>
+                        </div>
+                    </li>
+                
+                    
+                    <li>
+                        <span><img src="./index_files/c4.jpg"></span>
+                        <div class="txt">
+                            <p class="bg">马自达 马自达3 2011款 舒适版 2011-12-01首次上牌</p>
+                            <p>共行驶63412公里，一般车况</p>
+							<p>冯先生，134****3994 </p>
+                            <p>2015-06-12，<em>6.1万元</em> 成交</p>
+                        </div>
+                    </li>
+                
+                    
+                    <li>
+                        <span><img src="./index_files/c5.jpg"></span>
+                        <div class="txt">
+                            <p class="bg">海马 福美来 2010款 8周年纪念版 2014-08-01首次上牌</p>
+                            <p>共行驶66817公里，一般车况</p>
+							<p>夏小姐，135****4597 </p>
+                            <p>2015-06-12，<em>3.27万元</em> 成交</p>
+                        </div>
+                    </li>
+                
+                    
+                    <li>
+                        <span><img src="./index_files/c6.jpg"></span>
+                        <div class="txt">
+                            <p class="bg">斯柯达 明锐 2012款 逸俊版 2012-03-01首次上牌</p>
+                            <p>共行驶54175公里，一般车况</p>
+							<p>刘小姐，157****4781 </p>
+                            <p>2015-06-12，<em>8.7万元</em> 成交</p>
+                        </div>
+                    </li>
+                
+                    
+            </ul>
+        </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div class="footer">
+	<div class="ft_nav">
+		<div class="contenter">
+            <div class="foot_link">
+                <ul>
+                <li>
+                <a class="cor">关于我们</a>
+                <a href="http://www.58auto.com.cn/aboutus.asp">诚信介绍</a>
+				<a href="http://www.58auto.com.cn/news.asp">媒体报导</a>
+                <a href="http://www.58auto.com.cn/team.asp">我们的团队</a>
+                </li>
+                <li>
+                <a class="cor">诚信优势</a>
+                <a href="http://www.58auto.com.cn/ljbm.asp">了解帮卖</a>
+				 <a href="http://www.58auto.com.cn/salecar.asp">卖车流程</a>
+				<a href="http://www.58auto.com.cn/mcbz.asp">卖车必知</a>
+				
+                </li>
+				
+                <li>
+                <a class="cor">网站导航</a>
+                <a href="http://www.58auto.com.cn/salecar.asp">卖车流程</a>
+                 <a href="http://www.58auto.com.cn/service.asp">服务承诺</a>
+				 <a href="http://www.58auto.com.cn/reservation.asp">预约卖车</a>
+                </li>
+				
+                <li>
+                <a class="cor">联系我们</a>
+                <a href="http://www.58auto.com.cn/schz.asp">市场合作</a>
+             
+			<a href="http://www.58auto.com.cn/hr.asp">招贤纳士</a>
+              
+                </li>
+                </ul>
+            </div>
+            <div class="foot_phon">
+                <p class="ph_1">服务热线：</p>
+                <p class="ph_2">4000-701-555</p>
+				<p class="ph_3"><span>便捷、好价、安全</span></p>
+
+				
+            </div>
+            <div class="clear"></div>
+		</div>
+	</div>
+	<div class="ft_copyright">		
+	  <p>郑重提示：www.58auto.com.cn是诚信二手车唯一官方网站，为保护您合法权益，谨防假冒，如有疑问请拨打4000-701-555举报<br>
+CopyRight &#169;2002-2016 58auto.com.cn 上海诚信二手车经营有限公司 
+    沪ICP备16004807号 
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1920521'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/stat.php%3Fid%3D1920521' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1920521"><a href="http://www.cnzz.com/stat/website.php?web_id=1920521" target="_blank" title="站长统计">站长统计</a></span><script src="./index_files/stat.php" type="text/javascript"></script><script src="./index_files/core.php" charset="utf-8" type="text/javascript"></script></p>
+	  <p>&nbsp;</p>
+  </div>
+</div>
+
+
+
+
+<script language="JavaScript">
+function checkform()
+{
+	if (document.loginbox.name.value.length < 1 || document.loginbox.name.value == '姓名') {
+		alert("提示：请输入姓名");
+		document.loginbox.name.focus();
+		return false;
+	}
+	if (document.loginbox.mobile.value.length < 1 || document.loginbox.mobile.value == '手机号') {
+		alert("提示：请输入手机号");
+		document.loginbox.mobile.focus();
+		return false;
+	}
+	
+	if (document.loginbox.car.value.length < 1  || document.loginbox.car.value == '车型 如:宝马520Lii') {
+		alert("提示：请输入车型");
+		document.loginbox.car.focus();
+		return false;
+	}
+}
+</script>
+
+</body><div></div><div></div></html>
