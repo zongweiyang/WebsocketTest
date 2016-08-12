@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
-    <title>诚信二手车404错误页面</title>
+    <title>华丰二手车404错误页面</title>
     <style type="text/css" media="screen">
     *{margin:0;padding:0;font-family:arial,sans-serif;font-size:14px;}
     body,html{height:100%;}
@@ -18,9 +18,9 @@
   </head>
   <body>
       <div class="wrapper">
-          <h3>您访问的页面不存在，即将跳转到诚信二手车首页。</h3>
+          <h3>您访问的页面不存在，即将跳转到华丰二手车首页。</h3>
           <p class="tm">本页<span id="time">5</span>秒内自动跳转...</p>
-          <p class="btn"><a id="Btn" href="http://www.58auto.com.cn">前往百度首页</a></p>
+          <p class="btn"><a id="Btn" href="http://">前往百度首页</a></p>
       </div>
       <script type="text/javascript">
 
@@ -28,7 +28,7 @@ function sendStats(url){
     var n = "log_"+ (new Date()).getTime();
     var c = window[n] = new Image();
     c.onload = (c.onerror=function(){window[n] = null;});
-    c.src = 'http://www.58auto.com.cn' + url;
+    c.src = 'http://' + url;
     c = null;  
 }
 
