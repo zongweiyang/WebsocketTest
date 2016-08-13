@@ -33,7 +33,7 @@ div,form,p,img,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border: 0; }
 .guide-bg2 {background:url(../images/4-step-icon.png) no-repeat scroll -160px 0 #fff;}
 .guide-bg3 {background:url(../images/4-step-icon.png) no-repeat scroll -335px 0 #fff;}
 .guide-bg4 {background:url(../images/4-step-icon.png) no-repeat scroll -530px 0 #fff;}
-.guide .step {font-size :22px;color : #0062b1;height:40px;line-height:40px;}
+.guide .step {font-size :22px;color : #CE0000;height:40px;line-height:40px;}
 .guide .desc { font-size :14px;color : #4D4D4D;}
 .guide{ padding-bottom: 30px;margin-bottom: 30px;}
 .section-title {text-align: center;color : #4D4D4D;font-size:30px;line-height:40px;font-weight:normal;margin:10px auto; display:block;}

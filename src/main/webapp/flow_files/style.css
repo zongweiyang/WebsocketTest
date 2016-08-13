@@ -4,7 +4,7 @@ body {color: #454545;font-family:Microsoft YaHei;font-size:12px; background:#FAF
 ul li{list-style: none outside none;}
 img{border:none;}
 a{color: #454545; text-decoration:none;}
-a:hover{ text-decoration:none;color: #0062b1;}
+a:hover{ text-decoration:none;color: #CE0000;}
 input, textarea, select {vertical-align:middle; font-size:12px; color:#333;}
 dl,ul,li,ol{ list-style:none; padding:0; margin:0;}
 button{ cursor:pointer;vertical-align:middle;}
@@ -13,12 +13,12 @@ form{display:inline;*display: block;}
 .contenter{ width:1000px;margin:0 auto;}
 .clear{clear:both; height:0;overflow: hidden;}
 h1,h2,h3,h4{font-family:Microsoft YaHei;}
-.top{width:1000px; margin:20px auto;}
+.top{width:1000px; margin:2px auto;}
 .top_right a{ display:inline-block; padding:0 12px;}
 .top_right b{display:inline-block; margin-left:14px;font-family:Microsoft YaHei; font-weight:normal;color: #ff5a00;font-size:30px;}
 .top_right{ width:600px; float:right; text-align:right; margin-top: 18px;  position: relative;}
 
-.header {width:100%; background-color:#0062b1; *height:60px;}
+.header {width:100%; background-color:#CE0000; *height:60px;}
 .header_mode{ position:relative; *position:inherit; width:1000px;margin:0 auto;}
 .logo{ width:220px;height:56px; float:left; background: url(../images/logo.png) no-repeat scroll 0 0 transparent;}
 .logo a{ display:block; height: 62px; width: 152px;}
@@ -42,8 +42,8 @@ h1,h2,h3,h4{font-family:Microsoft YaHei;}
 .navigation{ width:810px; float:left;}
 .navigation li {font-size:16px;display: inline-block;float:left;font-family:Microsoft YaHei; height: 56px; line-height: 56px; margin-top: 4px;font-weight: bold;margin-right: 1px;}
 .navigation li a {display:block;color:#fff;text-decoration:none; padding:0 27px;}
-.navigation li a:hover{ background-color: #fff;color:#0062b1;}
-.navigation li a.item-active{ color:#0062b1;background-color: #fff;}
+.navigation li a:hover{ background-color: #fff;color:#CE0000;}
+.navigation li a.item-active{ color:#CE0000;background-color: #fff;}
 
 
 
@@ -182,7 +182,7 @@ color: #A9A9A9;text-indent: 3px;text-align: left;font-size: 12px;}
 .cplog .select dd ul li a:hover,.cplog-center .select dd ul li a:hover{background:#f5f5f5;}
 
 .ordbd dl dd span{background: url('../images/tj_04.jpg') no-repeat scroll left center #fff; padding-left:26px; height:28px; line-height:28px; font-size:12px; display:inline-block; color:#ff5a00; padding-right:30px;*padding-right:0px;}
-.ordbd .anbg,.showmode .anbg { background-color:#0062b1;width: 286px; display: inline-block;margin: 20px 0 10px; height: 44px; line-height: 44px; text-align: center;color: #FFF; font-size: 16px; font-weight: bold;border: medium none;cursor: pointer;}
+.ordbd .anbg,.showmode .anbg { background-color:#CE0000;width: 286px; display: inline-block;margin: 20px 0 10px; height: 44px; line-height: 44px; text-align: center;color: #FFF; font-size: 16px; font-weight: bold;border: medium none;cursor: pointer;}
 .showmode a.lxa{ color:#1A7DDA; text-decoration:underline; font-size:12px;}
 .ordbd a.lxa{position: absolute;width: 100px;top: 10px;color:#1A7DDA; text-decoration:underline; font-size:12px;}
 .ordbd a.lxa:hover{color: #FF8A00;}
@@ -234,8 +234,8 @@ color: #A9A9A9;text-indent: 3px;text-align: left;font-size: 12px;}
 .about_nav ul li a{display:inline-block;width:117px;height:28px;color:#9a9a9a;font-size:14px;vertical-align: middle;
 line-height:28px;}
 .about_nav ul li a:hover{color:#ff8a00;}
-.about_nav ul li.about_nav_cur a{ color: #0062b1;}
-.about_nav ul li.about_nav_cur a:hover{color:#0062b1;}
+.about_nav ul li.about_nav_cur a{ color: #CE0000;}
+.about_nav ul li.about_nav_cur a:hover{color:#CE0000;}
 .about_nav ul li.notLine{background:none;}
 *body {background-attachment: fixed;}
 .fixed{position:fixed;top:0;left:0;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+0));}
@@ -259,7 +259,7 @@ line-height:28px;}
 .nTab .TabTitle .active{background-color:#fff; border-top:2px solid #ff6400;height:34px; line-height:34px;}
 .nTab .TabTitle .normal{ color: #454545; background: #EFEFEF;height:34px; line-height:34px;}
 .nTab .TabContent{font-size:12px;  margin-top:30px;}
-.nTab .TabContent ul li a{ font-size:12px; line-height:30px; color:#0062b1}
+.nTab .TabContent ul li a{ font-size:12px; line-height:30px; color:#CE0000}
 .none {display:none;}
 
 .ask .title{ color:#1d7ad9; padding-left:0px;font-weight: bold;font-size: 14px;margin-top: 20px;margin-bottom: 10px;}
@@ -305,7 +305,7 @@ line-height:28px;}
 .zp_right tr{text-align: center;height: 40px;line-height: 40px;}
 .zp_right tr.bg_tr1{background:#f5f5f5;}
 .zp_right tr td{border-right: 1px solid #dbdbdb;color:#5c5c5c;}
-.zp_right tr.t1 td{background-color: #80d895;color:#ffffff;font-size: 16px;font-family: "ËÎÌå"}
+.zp_right tr.t1 td{background-color: #80d895;color:#ffffff;font-size: 16px;font-family: "ï¿½ï¿½ï¿½ï¿½"}
 
 
 .ins_nw{ margin-top:10px; height:120px; line-height:24px;border-bottom:1px dotted #CCCCCC}
